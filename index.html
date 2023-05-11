@@ -14,6 +14,7 @@ Date- 11/05/2023 Thursday
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,194 +23,79 @@ Date- 11/05/2023 Thursday
     <!-- Used font awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
-    <style>
-        *{
-          margin: 0;
-          padding: 0;  
-          box-sizing: border-box;
-          letter-spacing: 1px;
-          font-family: verdana;
-          text-transform: capitalize;
-        }
-        .walpaper{
-            width: 80rem;
-            height: 35rem;
-            margin: auto;
-            position: relative;
-            background: url('./img/bg.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-        
-            /* background: linear-gradient(55deg, rgb(113, 96, 185) 50%, #ca5252 50%); */
-            
-        }
-        body{
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            
-        }
-        .container{
-            /* position: absolute; */
-            height: 450px;
-            width: 330px;
-            /* margin-left: 10rem; */
-            margin: 1rem 12rem;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 2px 2px 2px 2px rgb(59, 56, 56);
-            padding: 10px;
-            overflow-y: auto;
-        }
-        h1{
-            font-weight: 600;
-            margin: 2rem 0 0 16rem;
-               
-        }
-        p{
-            margin-top: -2.8rem;
-            margin-left: 34.5rem;
-            font-family: 'Lucida Sans';
-            
-        }
-        #task{
-            height: 50px;
-            width: 82%;
-            outline: none;
-            border: none;
-            border-radius: 5px;
-            background: #666;
-            color: #fff;
-            padding: 0 10px;
-            margin: 10px 0;
-        }
 
-        #task::placeholder{
-            color: #bbb;
-        }
 
-        #add{
-            /* position: fixed; */
-            height: 3.4em;
-            width: 4em;
-            float: right;
-            margin-top: .8rem;
-            background: green;
-            cursor: pointer;
-            font-weight: 900;
-            color: white;
-            border-radius: 5px;
-        }
-        /* #reset{
-            position:sticky;
-            margin-top: 1em;
-            margin-left: 7.5rem;
-            width:5rem;
-            height: 2em;
-            font-weight: 900;
-            border-radius: 5px;
-            background: green;
-            color: white;
-            cursor: pointer;
-            
-            
-        } */
-        ul li{
-            background: #eee;
-            color: #333;
-            height: 40px;
-            border-radius: 50px;
-            margin: 10px 0;
-            padding: 10px;
-            position: relative;
-        }
-        ul .fa-check, .fa-trash-o {
-            position:absolute;
-            cursor: pointer;
-        }
-        ul .fa-check{
-            right: 40px;
-            color: green;
-        }
-
-        ul .fa-trash-o{
-            right: 15px;
-            color: #ff0033;
-        }
-
-        ul .checked{
-            background:lightgreen ;
-            text-decoration: line-through;
-            transition: .2s;
-        }
-        .error {
-    display: block;
-    padding: 10px;
-    color: #ff5050;
-    clear: both;
-    animation: fadeIn 3s;
-}
-
-/* .footer{
-    position: fixed;
-   
-    width: 19.5rem;
-    height: 3rem;
-    bottom: 4.5rem;
-    filter: blur(4px);
-    background-color:rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    
-} */
-    </style>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="walpaper">
         <h1>To-Do List</h1>
-    <div class="container">
-        <input type="text" id="task" placeholder="Enter your daily task here..." required>
-        <button type="button" id="add" onsubmit="return validateForm()">Add</button>
-        <span class="error"></span>
-        <ul></ul>
-        <!-- <div class="footer">
+        <div class="container">
+            <input type="text" id="task" placeholder="Enter your daily task here..." required>
+            <button type="button" id="add" onsubmit="return validateForm()">Add</button>
+            <span class="error"></span>
+            <ul></ul>
+            <!-- <div class="footer">
             <button type="reset" id="reset"> Clear All</button>
         </div>
          -->
+        </div>
+        <p>-Ms.Kiran M P</p>
     </div>
-    <p>-Ms.Kiran M P</p>
-</div>
     <script type="text/javascript">
 
 
-        $(document).ready(function(){
+        $(document).ready(function () {
 
-            $('#add').click(function(){
+            $('#add').click(function () {
                 var task = $('#task').val();
                 var length = task.length;
                 console.log(length);
-                if(length < 1) {
+                if (length < 1 || task == '') {
                     // event.preventDefault();
                     $('.error').show();
                     $('.error').text('Enter A Task');
-                    setTimeout(function() { $(".error").hide(1500); }, 3000)
+                    setTimeout(function () { $(".error").hide(1500); }, 3000)
                 } else {
-                $('ul').append('<li>' + task + ' <i class="fa fa-check"></i> <i class="fa fa-trash-o"></i></li>')
-                $('#task').val('');
-            } 
+                    $('ul').append('<li>' + task + ' <i class="fa fa-check"></i> <i class="fa fa-trash-o"></i></li>')
+                    $('#task').val('');
+                }
+            })
+        });
+        // or
+        $(document).ready(function () {
+
+            $('#task').change(function () {
+                var task = $(this).val();
+                var length = task.length;
+                console.log(length);
+                if (length === 0 || task == '') {
+                    // event.preventDefault();
+                    $('.error').show();
+                    $('.error').text('Enter A Task');
+                    setTimeout(function () { $(".error").hide(1500); }, 3000)
+                } else {
+                    $('ul').append('<li>' + task + ' <i class="fa fa-check"></i> <i class="fa fa-trash-o"></i></li>')
+                    $(this).val('');
+                }
             })
         });
 
 
-        $('ul').on('click','.fa-trash-o',function(){
+
+
+        $('ul').on('click', '.fa-trash-o', function () {
             $(this).parent('li').fadeOut(200);
         });
 
-        $('ul').on('click','.fa-check',function(){
+        $('ul').on('click', '.fa-check', function () {
             $(this).parent('li').toggleClass('checked');
         });
     </script>
 </body>
+
 </html>
