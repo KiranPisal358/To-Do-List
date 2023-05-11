@@ -1,5 +1,5 @@
-<!-- TO-Do List -> My Firts Project In JAvascript/ Jquery. -->
-<!-- This project ara having -
+<!-- TO-Do List -> My First Project In Javascript/ Jquery. -->
+<!-- This project are having -
     1. Add task 
     2. edit task
     3. delete task
@@ -22,8 +22,7 @@ Date- 11/05/2023 Thursday
     <title>My Daily To-Do List</title>
     <!-- Used font awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="font-awesome.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <!-- <link rel="stylesheet" href="styles/index.css"> -->
     <link rel="stylesheet" href="styles/styles.css">
 
 
@@ -67,13 +66,12 @@ Date- 11/05/2023 Thursday
             })
         });
         // or
-        $(document).ready(function () {
 
-            $('#task').change(function () {
+            $('#task').keyup(function () {
                 var task = $(this).val();
                 var length = task.length;
                 console.log(length);
-                if (length === 0 || task == '') {
+                if (length === 0 || e.which === 13) {
                     // event.preventDefault();
                     $('.error').show();
                     $('.error').text('Enter A Task');
@@ -83,7 +81,7 @@ Date- 11/05/2023 Thursday
                     $(this).val('');
                 }
             })
-        });
+       
 
 
 
