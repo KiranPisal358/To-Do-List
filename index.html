@@ -34,14 +34,19 @@ Date- 11/05/2023 Thursday
     <div class="walpaper">
         <h1>To-Do List</h1>
         <div class="container">
+            <div style="position:fixed; display: inline-flex;margin-bottom: 1rem;">
             <input type="text" id="task" placeholder="Enter your daily task here..." required>
-            <button type="button" id="add">Add</button>
-            <span class="error"></span>
-            <ul></ul>
-            <!-- <div class="footer">
-            <button type="reset" id="reset"> Clear All</button>
+            <button type="button" id="add">Add</button>    
         </div>
-         -->
+        <div class="font" style="margin:0; padding: 0;">
+           <button id="remove" style="cursor: pointer;">Clear All</button>
+        </div>
+        <br>
+        <div style="padding: inherit; margin-top: 1.9rem;">
+            <span class="error" style="margin-top:0.5rem;"></span> 
+            <ul style="list-style: none;"></ul>
+        </div>
+           
         </div>
         <p>-Ms.Kiran M P</p>
     </div>
@@ -84,6 +89,9 @@ Date- 11/05/2023 Thursday
        
 
 
+            $('#remove').click(function(){
+            $('li').remove();
+            });
 
 
         $('ul').on('click', '.fa-trash-o', function () {

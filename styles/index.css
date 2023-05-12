@@ -16,7 +16,7 @@
             background-size: cover;
             background-repeat: no-repeat;
         
-            /* background: linear-gradient(55deg, rgb(113, 96, 185) 50%, #ca5252 50%); */
+           
             
         }
         body{
@@ -50,7 +50,7 @@
         }
         #task{
             height: 50px;
-            width: 82%;
+            width: 16rem;
             outline: none;
             border: none;
             border-radius: 5px;
@@ -69,6 +69,7 @@
             height: 3.4em;
             width: 4em;
             float: right;
+            margin-left: 1.9px;
             margin-top: .8rem;
             /* background: green; */
             cursor: pointer;
@@ -76,26 +77,14 @@
             color: white;
             border-radius: 5px;
         }
-        /* #reset{
-            position:sticky;
-            margin-top: 1em;
-            margin-left: 7.5rem;
-            width:5rem;
-            height: 2em;
-            font-weight: 900;
-            border-radius: 5px;
-            background: green;
-            color: white;
-            cursor: pointer;
-            
-            
-        } */
         ul li{
             background: #eee;
             color: #333;
             height: 40px;
+            width: 16rem;
             border-radius: 50px;
             margin: 10px 0;
+            margin-left: -10px;
             padding: 10px;
             position: relative;
         }
